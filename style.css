@@ -1,4 +1,3 @@
-
 * {
     box-sizing: border-box;
 }
@@ -19,26 +18,57 @@ header h1 {
     font-size: 36px;
 }
 
+/* UNA FILA POR CADA FAMILIA EVOLUTIVA */
+
 .pokedex {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
 }
+
+/* 3 COLUMNAS IGUALES PARA QUE TODAS LAS FAMILIAS QUEDEN ALINEADAS */
 
 .familia-pokemon {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    align-items: start;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #dddddd;
 }
 
+.cargando {
+    text-align: center;
+    font-size: 18px;
+    color: #555555;
+}
+
+/* EN PANTALLAS CHICAS ENTRAN MENOS POR FILA */
+
+@media (max-width: 700px) {
+    .familia-pokemon { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 450px) {
+    .familia-pokemon { grid-template-columns: 1fr; }
+}
+
+/* CADA POKEMON EN SU PROPIA CAJA */
+
 .tarjeta-pokemon {
-    width: 280px;
     padding: 20px;
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
     text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tarjeta-pokemon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
 }
 
 .numero-pokemon {
@@ -49,8 +79,9 @@ header h1 {
 }
 
 .imagen-pokemon {
-    width: 150px;
-    height: 150px;
+    width: 100%;
+    max-width: 150px;
+    aspect-ratio: 1;
     object-fit: contain;
 }
 
@@ -67,7 +98,7 @@ header h1 {
 }
 
 .datos-pokemon p {
-    margin: 5px 0 15px;
+    margin: 0 0 12px;
 }
 
 .tipos-debilidades {
@@ -106,7 +137,7 @@ header h1 {
 
 .boton-ver-mas {
     width: 100%;
-    margin-top: 18px;
+    margin-top: 5px;
     padding: 10px;
     border: none;
     border-radius: 8px;
@@ -129,4 +160,77 @@ header h1 {
 
 .informacion-adicional[hidden] {
     display: none;
+}
+
+
+/* FICHA DETALLADA */
+
+.ficha-detallada {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #dddddd;
+    font-size: 13px;
+}
+
+.ficha-detallada h3 {
+    margin: 14px 0 6px;
+    font-size: 15px;
+}
+
+.descripcion-pokemon {
+    margin: 0 0 12px;
+    font-style: italic;
+    color: #444444;
+    line-height: 1.4;
+}
+
+.dato-ficha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 4px 0;
+}
+
+.dato-ficha span {
+    text-align: right;
+}
+
+/* IMAGEN VARIOCOLOR CHIQUITA */
+
+.imagen-shiny {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+/* ETIQUETAS DE HABILIDADES Y MOVIMIENTOS */
+
+.lista-habilidades,
+.lista-movimientos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.lista-movimientos {
+    max-height: 160px;
+    overflow-y: auto;
+}
+
+.cantidad-movimientos {
+    width: 100%;
+    margin: 0 0 4px;
+    color: #777777;
+}
+
+.etiqueta {
+    padding: 3px 8px;
+    border-radius: 10px;
+    background-color: #eeeeee;
+    font-size: 12px;
+}
+
+.etiqueta-oculta {
+    background-color: #e3d4f5;
 }
