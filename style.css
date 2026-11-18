@@ -1,0 +1,132 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    background-color: #eeeeee;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 36px;
+}
+
+.pokedex {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.familia-pokemon {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.tarjeta-pokemon {
+    width: 280px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+    text-align: center;
+}
+
+.numero-pokemon {
+    text-align: left;
+    color: #777777;
+    font-weight: bold;
+    margin: 0;
+}
+
+.imagen-pokemon {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+.tarjeta-pokemon h2 {
+    margin: 5px 0 15px;
+    text-transform: capitalize;
+}
+
+.datos-pokemon {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 13px;
+}
+
+.datos-pokemon p {
+    margin: 5px 0 15px;
+}
+
+.tipos-debilidades {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    text-align: left;
+    border-top: 1px solid #dddddd;
+    padding-top: 12px;
+}
+
+.columna-tipos,
+.columna-debilidades {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tipos-debilidades h3 {
+    margin: 0 0 5px;
+    font-size: 15px;
+}
+
+.elemento-tipo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+}
+
+.elemento-tipo img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.boton-ver-mas {
+    width: 100%;
+    margin-top: 18px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #349C26;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.boton-ver-mas:hover {
+    background-color: #014A00;
+}
+
+.informacion-adicional {
+    margin-top: 15px;
+    padding-top: 12px;
+    border-top: 1px solid #dddddd;
+    text-align: left;
+}
+
+.informacion-adicional[hidden] {
+    display: none;
+}
